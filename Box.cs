@@ -9,7 +9,39 @@ namespace PropExample
     class Box
     {
         private int width;
+
+        public int Width
+        {
+            get { return width; }
+            set {
+                if (value < 0)
+                {
+                    Console.WriteLine("너비와 높이는 자연수로 초기화 해주세요");
+                }
+                else
+                {
+                    width = value;
+                }
+            }
+        }
+
         private int height;
+
+        public int Height
+        {
+            get { return height; }
+            set
+            {
+                if (height < 0)
+                {
+                    Console.WriteLine("높이는 자연수로 입력해주세요");
+                }
+                else
+                {
+                    height = value;
+                }
+            }
+        }
 
         public Box(int width, int height)
         {
@@ -19,39 +51,16 @@ namespace PropExample
             }
             else
             {
-                Console.WriteLine("너비와 높이는 자연로 초기화 해주세요");
-            }
-        }
-
-        public int getWidth() { return width; }
-        public int getHeight() { return height; }
-
-        public void setWidth(int width)
-        {
-            if( width > 0 )
-            {
-                this.width = width;
-            }
-            else
-            {
                 Console.WriteLine("너비는 자연수로 입력해주세요");
             }
         }
-        public void setHeight(int height)
+
+        private int area;
+
+        public int Area
         {
-            if (width > 0)
-            {
-                this.height = height;
-            }
-            else
-            {
-                Console.WriteLine("높이는 자연수로 입력해주세요");
-            }
+            get { return Width * Height; }
         }
 
-        public int Area()
-        {
-            return this.width * this.height;
-        }
     }
 }
