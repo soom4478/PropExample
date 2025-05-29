@@ -16,7 +16,7 @@ namespace PropExample
             set {
                 if (value < 0)
                 {
-                    Console.WriteLine("너비와 높이는 자연수로 초기화 해주세요");
+                    Console.WriteLine("너비는 자연수로 입력해주세요");
                 }
                 else
                 {
@@ -51,7 +51,7 @@ namespace PropExample
             }
             else
             {
-                Console.WriteLine("너비는 자연수로 입력해주세요");
+                Console.WriteLine("너비와 높이는 자연수로 초기화 해주세요");
             }
         }
 
