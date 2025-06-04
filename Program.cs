@@ -49,6 +49,26 @@ namespace PropExample
             Console.WriteLine(box1.Width); 
 
             Console.WriteLine(box1.Area);
+
+            // 값 복사
+            int a = 10;
+            int b = a; // 값 복사
+            b = 20;
+            Console.WriteLine(a); // a와 b가 별개 변수
+
+            // 참조 복사
+            Test test = new Test();
+            test.value = 5;
+            Change(test);       // 래퍼런스 넘김에 주의
+            Console.WriteLine(test.value);
+        }
+        class Test
+        {
+            public int value = 10;
+        }
+        static void Change(Test input)
+        {
+            input.value = 20;
         }
     }
 }
